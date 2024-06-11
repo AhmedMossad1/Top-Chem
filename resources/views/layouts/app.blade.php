@@ -1,135 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+
 <head>
-    <meta charset="utf-8"/>
-    <link rel="apple-touch-icon" sizes="76x76" href="/frontend/img//apple-icon.png">
-    <link rel="icon" type="image/png" href="/frontend/img//favicon-32x32.png">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="description" content="@yield('meta_des')')">
-    <meta name="keywords" content="@yield('meta_keywords')">
-    <title> TOP CHEM | @yield('title')</title>
-
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
-        name='viewport'/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="FrontendV2/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="/FrontendV2/img/favicon.png">
+    <title>
+        TOP CHEM
+    </title>
     <!--     Fonts and icons     -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet"/>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+    <!-- Nucleo Icons -->
+    <link href="/FrontendV2/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="/FrontendV2/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <!-- CSS Files -->
-    <link href="/frontend/css/bootstrap.min.css" rel="stylesheet"/>
-    {{-- <link href="/frontend/css/v3/bootstrap.min.css" rel="stylesheet"/>v3 --}}
-    <link href="/frontend/css/paper-kit.css?v=2.2.0" rel="stylesheet"/>
-    {{-- <link href="/frontend/css/v3/material-kit.css" rel="stylesheet"/>v3 --}}
-
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    {{-- <link href="/frontend/demo/demo.css" rel="stylesheet"/> --}}
-    <style>
-        .dropdown-submenu {
-            position: relative;
-        }
-
-        .dropdown-submenu .dropdown-menu {
-            display: none;
-            top: 0;
-            left: 100%;
-            margin-top: -1px;
-        }
-
-        .dropdown-submenu:hover .dropdown-menu {
-            display: block;
-        }
-
-        .dropdown-menu .dropdown-submenu:hover > .dropdown-menu {
-            display: block;
-        }
-
-        .dropdown-item {
-            cursor: pointer;
-        }
-        .product-item img {
-            max-width: 40px;
-            margin-right: 10px;
-        }
-    </style>
+    <link id="pagestyle" href="/FrontendV2/css/material-kit.css?v=3.0.4" rel="stylesheet" />
+    <!-- Nepcha Analytics (nepcha.com) -->
+    <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
+    {{-- <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script> --}}
 </head>
 
 <body class="index-page sidebar-collapse">
-<!-- Navbar -->
-@include('layouts.nav')
-<div class="main">
-    @yield('content')
-
-@include('layouts.footer')
-    <!--   Core JS Files   -->
-    <script src="/frontend/js/core/jquery.min.js" type="text/javascript"></script>
-    <script src="/frontend/js/core/popper.min.js" type="text/javascript"></script>
-    <script src="/frontend/js/core/jquery.min.js" type="text/javascript"></script>
-    {{-- <script src="/frontend/js/core/v3/popper.min.js" type="text/javascript"></script>v3 --}}
-    <script src="/frontend/js/core/bootstrap.min.js" type="text/javascript"></script>
-    {{-- <script src="/frontend/js/core/v3/bootstrap.min.js" type="text/javascript"></script>v3 --}}
-    <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
-    <script src="/frontend/js/plugins/bootstrap-switch.js"></script>
-    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-    <script src="/frontend/js/plugins/nouislider.min.js" type="text/javascript"></script>
-    <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
-    <script src="/frontend/js/plugins/moment.min.js"></script>
-    <script src="/frontend/js/plugins/bootstrap-datepicker.js" type="text/javascript"></script>
-    <!-- Control Center for Paper Kit: parallax effects, scripts for the example pages etc -->
-    <script src="/frontend/js/paper-kit.js?v=2.2.0" type="text/javascript"></script>
-    {{-- <script>
-        $(document).ready(function () {
-
-            if ($("#datetimepicker").length != 0) {
-                $('#datetimepicker').datetimepicker({
-                    icons: {
-                        time: "fa fa-clock-o",
-                        date: "fa fa-calendar",
-                        up: "fa fa-chevron-up",
-                        down: "fa fa-chevron-down",
-                        previous: 'fa fa-chevron-left',
-                        next: 'fa fa-chevron-right',
-                        today: 'fa fa-screenshot',
-                        clear: 'fa fa-trash',
-                        close: 'fa fa-remove'
-                    }
-                });
-            }
-            function scrollToDownload() {
-                if ($('.section-download').length != 0) {
-                    $("html, body").animate({
-                        scrollTop: $('.section-download').offset().top
-                    }, 1000);
+    <!-- Navbar -->
+    @include('layouts.nav')
+    <div class="main">
+        @yield('content')
+    </div>
+        @include('layouts.footer')
+        <!--   Core JS Files   -->
+        <script src="/FrontendV2/js/core/popper.min.js" type="text/javascript"></script>
+        <script src="/FrontendV2/js/core/bootstrap.min.js" type="text/javascript"></script>
+        <script src="/FrontendV2/js/plugins/perfect-scrollbar.min.js"></script>
+        <!--  Plugin for TypedJS, full documentation here: https://github.com/inorganik/CountUp.js -->
+        <script src="/FrontendV2/js/plugins/countup.min.js"></script>
+        <!--  Plugin for Parallax, full documentation here: https://github.com/dixonandmoe/rellax -->
+        <script src="/FrontendV2/js/plugins/rellax.min.js"></script>
+        <!--  Plugin for TiltJS, full documentation here: https://gijsroge.github.io/tilt.js/ -->
+        <script src="/FrontendV2/js/plugins/tilt.min.js"></script>
+        <!--  Plugin for Selectpicker - ChoicesJS, full documentation here: https://github.com/jshjohnson/Choices -->
+        <script src="/FrontendV2/js/plugins/choices.min.js"></script>
+        <!-- Control Center for Material UI Kit: parallax effects, scripts for the example pages etc -->
+        <!--  Google Maps Plugin    -->
+        {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script> --}}
+        <script src="/FrontendV2/js/material-kit.min.js?v=3.0.4" type="text/javascript"></script>
+        <script type="text/javascript">
+            if (document.getElementById('state1')) {
+                const countUp = new CountUp('state1', document.getElementById("state1").getAttribute("countTo"));
+                if (!countUp.error) {
+                    countUp.start();
+                } else {
+                    console.error(countUp.error);
                 }
             }
-        });
-    </script> --}}
-    <script>
-        $(document).ready(function () {
-            if ($("#datetimepicker").length != 0) {
-                $('#datetimepicker').datetimepicker({
-                    icons: {
-                        time: "fa fa-clock-o",
-                        date: "fa fa-calendar",
-                        up: "fa fa-chevron-up",
-                        down: "fa fa-chevron-down",
-                        previous: 'fa fa-chevron-left',
-                        next: 'fa fa-chevron-right',
-                        today: 'fa fa-screenshot',
-                        clear: 'fa fa-trash',
-                        close: 'fa fa-remove'
-                    }
-                });
-            }
-            function scrollToDownload() {
-                if ($('.section-download').length != 0) {
-                    $("html, body").animate({
-                        scrollTop: $('.section-download').offset().top
-                    }, 1000);
+            if (document.getElementById('state2')) {
+                const countUp1 = new CountUp('state2', document.getElementById("state2").getAttribute("countTo"));
+                if (!countUp1.error) {
+                    countUp1.start();
+                } else {
+                    console.error(countUp1.error);
                 }
             }
-        });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-    {{-- @include('sweet::alert') --}}
+            if (document.getElementById('state3')) {
+                const countUp2 = new CountUp('state3', document.getElementById("state3").getAttribute("countTo"));
+                if (!countUp2.error) {
+                    countUp2.start();
+                } else {
+                    console.error(countUp2.error);
+                };
+            }
+        </script>
 </body>
 
 </html>
