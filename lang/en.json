@@ -4,10 +4,26 @@
     "More Products": "More Products",
     "Categories":"Categories",
     "About":"About",
-    "Contact US":"Contact US",
+    "Contact US":"Contact-Us",
     "Home":"Home",
     "Vision":"Vision",
-    "Goals":"Golas"
+    "Goals":"Golas",
+    "Quick Links":"Quick Links",
+    "Contact information":"Contact information",
+    "Phone":"Phone",
+    "Address":"Address",
+    "Email":"Email",
+    "See all products":"See all products",
+    "Our Team":"Our Team",
+    "Name":"Name",
+    "Message":"Your Message",
+    "Type here":"Type here",
+    "Submit":"Submit",
+    "Description":"description",
+    "composition":"composition",
+    "usage_rate":"usage_rate"
+
+
 
 
 }

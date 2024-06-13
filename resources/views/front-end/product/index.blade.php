@@ -33,17 +33,19 @@
             </div> --}}
             <div class="row">
                 <div class="col-md-5 col-6 mx-lg-0 mx-auto px-lg-0 px-md-0 my-auto">
-                    <img class="max-width-400 border-radius-lg shadow-lg" src="{{ url('uploads/' . $product->image) }}" alt="{{ $product->name }}">
-                  </div>
-                <div class="col-md-5 col-10 d-flex justify-content-center flex-column mx-auto text-lg-start text-center">
-                  <h2 class="mb-4">{{ $product->name }}</h2>
-                  <p class="mb-2">{{ $product->description }} </p>
-
-                  <h3 class="mt-4">التركيب</h3>
-                  <p>It really matters and then like it really doesn&#39;t matter. What matters is the people who are sparked by it. And the people who are like offended by it, it doesn&#39;t matter.</p>
+                    <img class="max-width-400 border-radius-lg shadow-lg" src="{{ url('uploads/' . $product->image) }}"
+                        alt="{{ $product->name }}">
                 </div>
+                <div class="col-md-5 col-10 d-flex justify-content-center flex-column mx-auto text-lg-start text-center">
+                    <h2 class="mb-4">{{ $product->name }}</h2>
+                    <p class="mb-2">{{ $product->description }} </p>
+                    <h3 class="mt-4"> {{ __('composition') }}</h3>
+                    <p class="mb-2">{{ $product->composition }} </p>
+                    <h3 class="mt-4"> {{ __('usage_rate') }}</h3>
+                    <p class="mb-2">{{ $product->usage_rate }} </p>
+                </div>
+            </div>
 
-              </div>
         </div>
     </section>
 @endsection

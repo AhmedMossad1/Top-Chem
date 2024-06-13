@@ -11,7 +11,7 @@
                         </a>
                     </div>
                     <div class="card-body text-center px-1 pt-3">
-                        <p class="mb-2 text-sm">Private Room • 1 Guests • 1 Sofa</p>
+                        <p class="mb-2 text-sm">{{ $product->description }}</p>
                         <a href="{{ route('front.product', ['id' => $product->id]) }}" title="{{ $product->name }}">
 
                             <button type="button" class="btn bg-gradient-primary btn-sm">{{ $product->name }}</button>
@@ -20,5 +20,9 @@
                 </div>
             </div>
         </div>
+
     </div>
+
 </section>
+
+
