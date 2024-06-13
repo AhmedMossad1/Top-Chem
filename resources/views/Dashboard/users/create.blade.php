@@ -17,7 +17,7 @@
             <p class="card-category">{{$pageDes}}</p> --}}
         </div>
         <div class="card-body">
-            <form method="POST" action="{{route('users.store')}}">
+            <form method="POST" action="{{route('users.store')}}" enctype="multipart/form-data" >
             @include('Dashboard.users.form')
             <button type="submit" class="btn btn-primary pull-right">Add </button>
             <div class="clearfix"></div>

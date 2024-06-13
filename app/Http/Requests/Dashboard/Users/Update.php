@@ -11,7 +11,10 @@ class Update extends FormRequest
         return [
             'name' => 'required|string|max:191',
             'email' => 'required|string|email|max:191|unique:users,email,'.$this->user,
-            'group' => 'required'
+            'group' => 'required',
+            'show' => 'required' ,
+            'image' => 'nullable|image',
+            'job_title'=>'required',
 
         ];
     }

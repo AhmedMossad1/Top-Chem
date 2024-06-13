@@ -16,4 +16,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public function scopeShow(){
+        return $this->where('show' , 1);
+    }
 }

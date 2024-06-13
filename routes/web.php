@@ -15,15 +15,13 @@ Route::group(
             ], function () {
             Route::get('home',[HomeController::class,'index'])->name('admin.home');
             Route::resource('users','UsersController')->except('show','delete');
-
-        Route::resource('categories', 'CategoriesController')->except(['show']);
-
+            Route::resource('categories', 'CategoriesController')->except(['show']);
             Route::resource('products', 'ProductsController')->except(['show']);
-        Route::resource('messages', 'MessagesController')->only(['index' , 'destroy' , 'edit']);
+            Route::resource('messages', 'MessagesController')->only(['index' , 'destroy' , 'edit']);
         // Route::post('messages/replay/{id}', 'MessagesController@replay')->name('message.replay');
 
 });
-Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
+Route::get('/products', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::get('/', 'App\Http\Controllers\HomeController@welcome')->name('frontend.landing');
 Route::get('contact', 'App\Http\Controllers\HomeController@contactUS')->name('front.contact-us');
 Route::get('category/{id}', 'App\Http\Controllers\HomeController@category')->name('front.category');
