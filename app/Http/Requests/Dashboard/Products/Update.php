@@ -11,6 +11,8 @@ class Update extends FormRequest
         return [
             'name' => 'required|max:191',
             'description' => 'required|min:10',
+            'composition'=>'required|min:10',
+            'usage_rate'=>'required|min:10',
             'cat_id' => 'required|integer',
             'published' => 'required' ,
             'image' => 'nullable|image'
