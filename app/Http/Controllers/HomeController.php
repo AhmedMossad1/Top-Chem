@@ -4,6 +4,7 @@ use App\Http\Requests\FrontEnd\Messages\Store;
 use App\Models\Category;
 use App\Models\Message;
 use App\Models\Product;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -18,13 +19,13 @@ class HomeController extends Controller
         if(request()->has('search') && request()->get('search') != ''){
             $product = $product->where('name' , 'like' , "%".request()->get('search')."%");
         }
-        $product = $product->paginate(30);
+        $product = $product->paginate(10);
         return view('home' , compact('product'));
     }
     public function category($id){
         $cat = Category::findOrFail($id);
-        $product = Product::published()->where('cat_id' , $id)->orderBy('id' , 'desc')->paginate(30);
-        return view('front-end.category.index' , compact('product' , 'cat'));
+        $products = Product::published()->where('cat_id' , $id)->orderBy('id' , 'desc')->paginate(3);
+        return view('front-end.category.index' , compact('products' , 'cat'));
     }
     public function product($id){
         $product = Product::published()->findOrFail($id);
@@ -42,10 +43,21 @@ class HomeController extends Controller
         return view('welcome' , compact('product' , 'product_count','categories'));
     }
     public function aboutUS(){
-        return view('front-end.about-Us.about' );
+        $users = User::where('group', 'user')
+        ->where('show', true)
+        ->select('name', 'image', 'job_title')
+        ->get();
+        return view('front-end.about-Us.about', compact('users'));
     }
     public function contactUS(){
         return view('front-end.contact-us.contact-us' );
+    }
+    public function profile(){
+        $users = User::where('group', 'user')
+        ->where('show', true)
+        ->select('name', 'image', 'job_title')
+        ->get();
+        return view('front-end.about-Us.about', compact('users'));
     }
 
 
