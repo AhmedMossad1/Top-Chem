@@ -26,47 +26,59 @@
                             </li>
                             <li class="nav-item dropdown dropdown-hover mx-2">
                                 <a class="nav-link ps-2 d-flex cursor-pointer align-items-center"
-                                    id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="material-icons opacity-6 me-2 text-md">view_day</i>
+                                    id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false"
+                                    role="button">
+                                    <i class="material-icons opacity-6 me-2 text-md">grid_view</i>
                                     {{ __('Categories') }}
                                     <img src="/FrontendV2/img/down-arrow-dark.svg" alt="down-arrow"
                                         class="arrow ms-auto ms-md-2">
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md dropdown-md-responsive p-3 border-radius-lg mt-0 mt-lg-3"
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md dropdown-md-responsive p-3 border-radius-lg mt-0 mt-lg-3"
                                     aria-labelledby="dropdownMenuBlocks">
-                                    <div class="d-none d-lg-block">
-                                        @foreach ($categories as $category)
-                                            <li class="nav-item dropdown dropdown-hover dropdown-subitem">
-                                                <a class="dropdown-item py-2 ps-3 border-radius-md"
-                                                    href="{{ route('front.category', ['id' => $category->id]) }}">
-                                                    <div
-                                                        class="w-100 d-flex align-items-center justify-content-between">
-                                                        <div>
-                                                            <h6
-                                                                class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
-                                                                {{ $category->name }}
-                                                            </h6>
-                                                            <span class="text-sm">See all products</span>
-                                                        </div>
+                                    <div class="d-none d-lg-flex">
+                                        <ul class="list-group w-100">
+                                            @foreach ($categories as $category)
+                                                <li
+                                                    class="nav-item dropdown dropdown-hover dropdown-subitem list-group-item border-0 p-0">
+                                                    <a class="dropdown-item border-radius-md text-dark ps-3 d-flex align-items-center mb-1"
+                                                        id="dropdownCategory{{ $category->id }}"
+                                                        href="{{ route('front.category', ['id' => $category->id]) }}">
+                                                        <span>{{ $category->name }}</span>
                                                         <img src="/FrontendV2/img/down-arrow.svg" alt="down-arrow"
-                                                            class="arrow">
-                                                    </div>
-                                                </a>
-                                                <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
-                                                    @foreach ($category->products as $product)
-                                                        <a class="dropdown-item ps-3 border-radius-md mb-1"
-                                                            href="{{ route('front.product', ['id' => $product->id]) }}">
-                                                            <div class="d-flex align-items-center">
+                                                            class="arrow ms-auto">
+                                                    </a>
+                                                    <div class="dropdown-menu mt-0 py-3 px-2"
+                                                        aria-labelledby="dropdownCategory{{ $category->id }}">
+                                                        @foreach ($category->products as $product)
+                                                            <a class="dropdown-item ps-3 border-radius-md mb-1"
+                                                                href="{{ route('front.product', ['id' => $product->id]) }}">
                                                                 <span>{{ $product->name }}</span>
-                                                            </div>
-                                                        </a>
-                                                    @endforeach
-                                                </div>
-                                            </li>
-                                        @endforeach
+                                                            </a>
+                                                        @endforeach
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        </ul>
                                     </div>
-                                </ul>
+                                    <div class="row d-lg-none">
+                                        <div class="col-12 d-flex justify-content-center flex-column">
+                                            @foreach ($categories as $category)
+                                                <h6
+                                                    class="dropdown-header text-dark font-weight-bolder d-flex justify-content-center align-items-center px-0">
+                                                    {{ $category->name }}
+                                                </h6>
+                                                @foreach ($category->products as $product)
+                                                    <a href="{{ route('front.product', ['id' => $product->id]) }}"
+                                                        class="dropdown-item border-radius-md">
+                                                        {{ $product->name }}
+                                                    </a>
+                                                @endforeach
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
+
                             <li class="nav-item dropdown dropdown-hover mx-2">
                                 <a class="nav-link ps-2 d-flex cursor-pointer align-items-center"
                                     href="{{ route('front.about-us') }}">
@@ -77,19 +89,29 @@
                             <li class="nav-item dropdown dropdown-hover mx-2">
                                 <a class="nav-link ps-2 d-flex cursor-pointer align-items-center"
                                     href="{{ route('front.contact-us') }}">
-                                    <i class="material-icons opacity-6 me-2 text-md">article</i>
+                                    <i class="material-icons opacity-6 me-2 text-md">drafts</i>
                                     {{ __('Contact US') }}
                                 </a>
                             </li>
-                            <li class="nav-item dropdown dropdown-hover mx-2">
+                            <li class="nav-item dropdown dropdown-hover mx-2 ">
                                 @if (app()->getLocale() == 'en')
-                                    <a class="nav-link " href="{{ url('lang/ar') }}"id="navbarDropdownMenuLink"
+                                    {{-- <a class="nav-link " href="{{ url('lang/ar') }}"id="navbarDropdownMenuLink"
                                         aria-haspopup="true" aria-expanded="false">
-                                        عربي</a>
+                                        عربي</a> --}}
+                                    <a class="nav-link" href="{{ url('lang/ar') }}" id="navbarDropdownMenuLink"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <img src="/FrontendV2/img/egypt_flag.jpg" alt="Arabic" width="20"
+                                            height="14">
+                                    </a>
                                 @else
-                                    <a class="nav-link " href="{{ url('lang/en') }}"id="navbarDropdownMenuLink"
+                                    {{-- <a class="nav-link " href="{{ url('lang/en') }}"id="navbarDropdownMenuLink"
                                         aria-haspopup="true" aria-expanded="false">
-                                        En</a>
+                                        En</a> --}}
+                                    <a class="nav-link" href="{{ url('lang/en') }}" id="navbarDropdownMenuLink"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <img src="/FrontendV2/img/us_flag.jpg" alt="Arabic" width="20"
+                                            height="14">
+                                    </a>
                                 @endif
                             </li>
                         </ul>
