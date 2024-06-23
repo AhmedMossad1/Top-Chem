@@ -17,22 +17,8 @@
             </div>
         </div>
         <div class="container">
-            {{-- <div class="row">
-                <div class="col-lg-6 mx-auto text-center">
-                    <h2 class="mb-0">{{ $product->name }}</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <img class="card-img-top" src="{{ url('uploads/' . $product->image) }}" alt="{{ $product->name }}"
-                            style="max-width: 100%;">
-                    </div>
-                    <div class="col-md-9">
-                        <p>{{ $product->description }}</p>
-                    </div>
-                </div>
-            </div> --}}
             <div class="row">
-                <div class="col-md-5 col-6 mx-lg-0 mx-auto px-lg-0 px-md-0 my-auto">
+                <div class="col-md-5 col-6 mx-lg-0 mx-auto px-lg-0 px-md-0 my-auto"style="flex: 1 0 auto">
                     <img class="max-width-400 border-radius-lg shadow-lg" src="{{ url('uploads/' . $product->image) }}"
                         alt="{{ $product->name }}">
                 </div>

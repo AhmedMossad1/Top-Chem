@@ -5,7 +5,7 @@
                 class="navbar navbar-expand-lg  blur border-radius-xl top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
                 <div class="container-fluid px-0">
                     <a class="navbar-brand font-weight-bolder ms-sm-3" href="{{ route('frontend.landing') }}"
-                        rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
+                        rel="tooltip" data-placement="bottom" target="_blank">
                         TOP CHEM
                     </a>
                     <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"
@@ -94,14 +94,12 @@
                             </li>
                             <li class="nav-item dropdown dropdown-hover mx-2 ">
                                 @if (app()->getLocale() == 'en')
-
                                     <a class="nav-link" href="{{ url('lang/ar') }}" id="navbarDropdownMenuLink"
                                         aria-haspopup="true" aria-expanded="false">
                                         <img src="/FrontendV2/img/egypt_flag.jpg" alt="Arabic" width="20"
                                             height="14">
                                     </a>
                                 @else
-
                                     <a class="nav-link" href="{{ url('lang/en') }}" id="navbarDropdownMenuLink"
                                         aria-haspopup="true" aria-expanded="false">
                                         <img src="/FrontendV2/img/us_flag.jpg" alt="Arabic" width="20"
@@ -112,7 +110,8 @@
                             <li class="nav-item dropdown dropdown-hover mx-2">
                                 <form class="form-inline ml-auto" action="{{ route('home') }}">
                                     <div class="input-group">
-                                        <input type="text" name="search" class="form-control" placeholder="Search">
+                                        <input type="text" name="search" class="form-control"
+                                            placeholder={{ __('Search') }}>
                                         <div class="input-group-append">
                                             <span class="input-group-text">
                                                 <i class="fas fa-search" aria-hidden="true"></i>
