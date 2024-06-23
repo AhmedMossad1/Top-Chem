@@ -41,8 +41,7 @@
                                                 <li
                                                     class="nav-item dropdown dropdown-hover dropdown-subitem list-group-item border-0 p-0">
                                                     <a class="dropdown-item border-radius-md text-dark ps-3 d-flex align-items-center mb-1"
-                                                        id="dropdownCategory{{ $category->id }}"
-                                                        href="{{ route('front.category', ['id' => $category->id]) }}">
+                                                        id="dropdownCategory{{ $category->id }}"href="{{ route('front.category', ['id' => $category->id]) }}">
                                                         <span>{{ $category->name }}</span>
                                                         <img src="/FrontendV2/img/down-arrow.svg" alt="down-arrow"
                                                             class="arrow ms-auto">
@@ -95,18 +94,14 @@
                             </li>
                             <li class="nav-item dropdown dropdown-hover mx-2 ">
                                 @if (app()->getLocale() == 'en')
-                                    {{-- <a class="nav-link " href="{{ url('lang/ar') }}"id="navbarDropdownMenuLink"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        عربي</a> --}}
+
                                     <a class="nav-link" href="{{ url('lang/ar') }}" id="navbarDropdownMenuLink"
                                         aria-haspopup="true" aria-expanded="false">
                                         <img src="/FrontendV2/img/egypt_flag.jpg" alt="Arabic" width="20"
                                             height="14">
                                     </a>
                                 @else
-                                    {{-- <a class="nav-link " href="{{ url('lang/en') }}"id="navbarDropdownMenuLink"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        En</a> --}}
+
                                     <a class="nav-link" href="{{ url('lang/en') }}" id="navbarDropdownMenuLink"
                                         aria-haspopup="true" aria-expanded="false">
                                         <img src="/FrontendV2/img/us_flag.jpg" alt="Arabic" width="20"
@@ -114,7 +109,20 @@
                                     </a>
                                 @endif
                             </li>
+                            <li class="nav-item dropdown dropdown-hover mx-2">
+                                <form class="form-inline ml-auto" action="{{ route('home') }}">
+                                    <div class="input-group">
+                                        <input type="text" name="search" class="form-control" placeholder="Search">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                <i class="fas fa-search" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </li>
                         </ul>
+
                     </div>
                 </div>
             </nav>
