@@ -19,7 +19,7 @@ class admin
             return redirect('/login');
         }
         if(auth()->user()->group != 'admin'){
-            return redirect('/home');
+            return redirect('/products');
         }
         return $next($request);
     }

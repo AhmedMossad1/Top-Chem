@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
-
+{{-- <html lang="ar" itemscope itemtype="http://schema.org/WebPage"> --}}
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}" itemscope itemtype="http://schema.org/WebPage">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -76,6 +76,7 @@
                     console.error(countUp2.error);
                 };
             }
+
         </script>
 
 </body>

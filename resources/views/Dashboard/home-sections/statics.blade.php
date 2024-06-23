@@ -1,4 +1,13 @@
+@extends('Dashboard.layout.app')
+@section('content')
+    @component('Dashboard.layout.header')
+        @slot('nav_title')
+
+        @endslot
+    @endcomponent
+
 <div class="row">
+    <!-- Existing stats cards here -->
     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
         <div class="card card-stats">
             <div class="card-header card-header-warning card-header-icon">
@@ -50,4 +59,34 @@
     </div>
 </div>
 
-
+<!-- New table for products with visit counts -->
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">Products with Visit Counts</h4>
+            </div>
+            <div class="card-body table-responsive">
+                <table class="table table-hover">
+                    <thead class="text-primary">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Visit Count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($products as $product)
+                            <tr>
+                                <td>{{ $product->id }}</td>
+                                <td>{{ $product->name }}</td>
+                                <td>{{ $product->visit_count }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

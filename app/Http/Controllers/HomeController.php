@@ -5,7 +5,7 @@ use App\Models\Category;
 use App\Models\Message;
 use App\Models\Product;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Session;
 class HomeController extends Controller
 {
     // public function __construct(){
@@ -27,9 +27,22 @@ class HomeController extends Controller
         $products = Product::published()->where('cat_id' , $id)->orderBy('id' , 'desc')->paginate(3);
         return view('front-end.category.index' , compact('products' , 'cat'));
     }
-    public function product($id){
+    public function product($id) {
         $product = Product::published()->findOrFail($id);
-        return view('front-end.product.index' , compact('product'));
+
+        // Check if the product ID is already in the session
+        $visitedProducts = Session::get('visited_products', []);
+
+        if (!in_array($id, $visitedProducts)) {
+            // If not, increment the visit count and store the product ID in the session
+            $product->increment('visit_count');
+            Session::push('visited_products', $id);
+        }
+
+        // Get all products with visit counts
+        $products = Product::select('id', 'name', 'visit_count')->get();
+
+        return view('front-end.product.index', compact('product', 'visitedProducts', 'products'));
     }
 
     public function messageStore(Store $request){

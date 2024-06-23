@@ -13,6 +13,6 @@
     @endcomponent
 
     @include('Dashboard.home-sections.statics')
-    @include('Dashboard.home-sections.latest-comments')
+
 
 @endsection
