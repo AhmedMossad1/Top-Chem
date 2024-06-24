@@ -41,6 +41,16 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="input-group input-group-static mb-4">
+                                    <label>{{ __('Phone') }}</label>
+                                    @php $input = "phone"; @endphp
+                                    <input type="text" name="{{ $input }}" class="form-control @error($input) is-invalid @enderror" placeholder="{{ __('Phone') }}">
+                                    @error($input)
+                                        <span role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
                                 <div>
                                     <div class="input-group input-group-static">
                                         <label>{{ __('Email') }}</label>

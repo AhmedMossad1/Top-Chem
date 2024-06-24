@@ -39,6 +39,9 @@
                     Name
                 </th>
                 <th>
+                    Phone
+                </th>
+                <th>
                     Email
                 </th>
                 <th>
@@ -56,6 +59,9 @@
                     </td>
                     <td>
                         {{$row->name}}
+                    </td>
+                    <td>
+                        {{$row->phone}}
                     </td>
                     <td>
                         {{$row->email}}
