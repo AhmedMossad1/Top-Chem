@@ -62,9 +62,11 @@
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="card">
-                <div class="card-header card-header-primary">
-                    <h4 class="card-title">Products with Visit Counts</h4>
+                <div class="card-header card-header-primary" style="display: flex; align-items: center;">
+                    <i class="material-icons" style="color:#fff; margin-right: 10px;">timeline</i>
+                    <h4 class="card-title" style="margin: 0;">Products with Visit Counts</h4>
                 </div>
+
                 <div class="card-body table-responsive">
                     <table class="table table-hover">
                         <thead class="text-primary">
