@@ -3,10 +3,10 @@
 @section('content')
     <section class="py-7">
         <div class="container py-6 mt-2">
-            <div class="row">
+            <div class="row" dir="ltr">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item text-dark opacity-5"><a href="{{ route('frontend.landing') }}">Home</a>
+                        <li class="breadcrumb-item text-dark opacity-5"><a href="{{ route('frontend.landing') }}">{{ __('Home') }}</a>
                         </li>
                         <li class="breadcrumb-item text-dark opacity-5"><a
                                 href="{{ route('front.category', ['id' => $product->cat->id]) }}">{{ $product->cat->name }}</a>
