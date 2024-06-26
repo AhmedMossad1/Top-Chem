@@ -22,7 +22,9 @@
     "Description":"description",
     "composition":"composition",
     "usage_rate":"usage_rate",
-    "Search":"Search"
+    "Search":"Search",
+    "Login":"Login",
+    "Password":"Password"
 
 
 

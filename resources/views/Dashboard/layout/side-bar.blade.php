@@ -25,7 +25,7 @@
         </li>
         <li class="nav-item {{ is_active('categories') }}">
             <a  class="nav-link"  href="{{ route('categories.index') }}">
-                <i class="material-icons">bubble_chart</i>
+                <i class="material-icons">extension</i>
                 <p>Categories</p>
             </a>
         </li>

@@ -22,7 +22,9 @@
     "Description":"وصف المنتج",
     "composition":"التركيب",
     "usage_rate":"معدل الأضافة",
-    "Search":"بحث"
+    "Search":"بحث",
+    "Login":"تسجيل الدخول",
+    "Password":"كلمة المرور"
 
 
 }
