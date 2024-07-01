@@ -68,7 +68,7 @@
                                             {{ $row->message }}
                                         </td>
                                         <td class="td-actions text-right">
-                                            @include('Dashboard.shared.buttons.edit')
+                                            {{-- @include('Dashboard.shared.buttons.edit') --}}
                                             @include('Dashboard.shared.buttons.delete')
                                         </td>
                                     </tr>

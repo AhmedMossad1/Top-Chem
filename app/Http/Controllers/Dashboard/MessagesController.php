@@ -12,9 +12,9 @@ class MessagesController extends DashboardController
     }
     //replay a message from Dashboard to Mail  => not active now !!
     public function replay($id,Store $request){
-        $message=$this->model->findOrFail($id);
-        $replay = $this->model->findOrfail($id);
-        Mail::to($message->email)->send(new ReplayContact($message,$replay));
-    return redirect()->route('messages.edit',['id'=>$message->id]);
+    //     $message=$this->model->findOrFail($id);
+    //     $replay = $this->model->findOrfail($id);
+    //     Mail::to($message->email)->send(new ReplayContact($message,$replay));
+    // return redirect()->route('messages.edit',['id'=>$message->id]);
     }
 }

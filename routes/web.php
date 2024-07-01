@@ -18,7 +18,6 @@ Route::group(
             Route::resource('categories', 'CategoriesController')->except(['show']);
             Route::resource('products', 'ProductsController')->except(['show']);
             Route::resource('messages', 'MessagesController')->only(['index' , 'destroy' , 'edit']);
-        // Route::post('messages/replay/{id}', 'MessagesController@replay')->name('message.replay');
 
 });
 Route::get('/products', 'App\Http\Controllers\HomeController@index')->name('home');
@@ -40,10 +39,5 @@ Route::get('lang/{locale}', function ($locale) {
         return view('dashboard');
     })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
 
 require __DIR__.'/auth.php';

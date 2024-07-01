@@ -8,11 +8,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Session;
 class HomeController extends Controller
 {
-    // public function __construct(){
-    //     $this->middleware('auth')->only([
-    //         'commentUpdate' , 'commentStore'
-    //     ]);
-    // }
+
     public function index()
     {
         $product = Product::published()->orderBy('id' , 'desc');

@@ -1,16 +1,4 @@
-{{-- <div class="page-header min-vh-75 relative" style="background-image: url('/FrontendV2/img/bg2.jpg')">
-    <span class="mask bg-gradient-primary opacity-4"></span>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7 text-center mx-auto">
-                <h1 class="text-white pt-3 mt-n5">TOP CHEM</h1>
-                <p class="lead text-white mt-3">Free & Open Source Web UI Kit built over Bootstrap 5. <br /> Join over
-                    1.6 million developers around the world. </p>
-            </div>
-        </div>
-    </div>
-</div> --}}
-<!-- -------- START HEADER 10 w/ carousel ------- -->
+
 <header>
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">

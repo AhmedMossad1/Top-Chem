@@ -1,4 +1,4 @@
-@extends('Dashboard.layout.app')
+{{-- @extends('Dashboard.layout.app')
 @section('title')
 {{$pageTitle}}
 @endsection
@@ -17,4 +17,4 @@
     </div>
     @endcomponent
 
-@endsection
+@endsection --}}
